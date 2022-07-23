@@ -101,6 +101,7 @@ class GuildController extends Controller
      */
     public function destroy(Guild $guild)
     {
-        //
+        $guild->delete();
+        return redirect()->route('guild.index');
     }
 }

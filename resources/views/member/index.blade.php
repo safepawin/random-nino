@@ -22,7 +22,11 @@
                         <td class="text-end">{{ number_format($item->power, 2) }}</td>
                         <td class="text-center">
                             <a href="">แก้ไข</a>
-                            <a href="">ลบ</a>
+                            <form action="{{ route('member.destroy', $item->id) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit">ลบ</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

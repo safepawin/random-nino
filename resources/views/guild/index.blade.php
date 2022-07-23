@@ -25,7 +25,11 @@
                         <td class="text-end">{{ $item->level }}</td>
                         <td class="text-center">
                             <a href="">แก้ไข</a>
-                            <a href="">ลบ</a>
+                            <form action="{{ route('guild.destroy', $item->id) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit">ลบ</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
